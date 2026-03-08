@@ -6,6 +6,7 @@ import Features from "./components/Features";
 import DashboardPreview from "./components/DashboardPreview";
 import Markets from "./components/Markets";
 import Pricing from "./components/Pricing";
+import SetupGuide from "./components/SetupGuide";
 import FAQ from "./components/FAQ";
 import Footer from "./components/Footer";
 import styles from "./apex-strike.module.css";
@@ -24,6 +25,7 @@ export default function ApexStrikePage() {
       <DashboardPreview />
       <Markets />
       <Pricing />
+      <SetupGuide />
       <FAQ />
 
       {/* ═══ FINAL CTA ═══ */}
