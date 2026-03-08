@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   description:
     "Professional developer tools and trading indicators by ConnectDevs.",
   icons: {
-    icon: "/favicon.ico",
+    icon: "/icon.png",
     apple: "/apple-icon.png",
   },
 };

@@ -1,0 +1,603 @@
+/* ═══════════════════════════════════════════════
+   CONNECTDEVS HERO SLIDER — Split-Screen Layout
+   ═══════════════════════════════════════════════ */
+
+/* ─── ROOT ─── */
+.slider {
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ─── HEADER ─── */
+.header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 24px 40px;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logo {
+  border-radius: 10px;
+}
+
+.brandName {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.3rem;
+  letter-spacing: 2px;
+  background: var(--gradient-accent);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ─── SPLIT CONTAINER ─── */
+.slideContainer {
+  flex: 1;
+  display: flex;
+  position: relative;
+}
+
+/* ─── LEFT PANEL (text) ─── */
+.leftPanel {
+  width: 55%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+/* ─── RIGHT PANEL (visual) ─── */
+.rightPanel {
+  width: 45%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: rgba(10, 16, 32, 0.4);
+  border-left: 1px solid var(--border-subtle);
+}
+
+/* ─── SLIDE CONTENT (left) ─── */
+.slideContent {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 100px 60px 40px 80px;
+  opacity: 0;
+  transform: translateY(30px);
+  transition:
+    opacity 0.55s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.55s cubic-bezier(0.16, 1, 0.3, 1);
+  pointer-events: none;
+}
+
+.slideContentActive {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+  transition-delay: 0.12s;
+}
+
+/* ─── SLIDE VISUAL (right) ─── */
+.slideVisual {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transform: translateX(40px);
+  transition:
+    opacity 0.55s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.55s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.slideVisualActive {
+  opacity: 1;
+  transform: translateX(0);
+  transition-delay: 0.18s;
+}
+
+/* ─── LARGE FADED SLIDE NUMBER ─── */
+.slideNumber {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 9rem;
+  position: absolute;
+  top: 90px;
+  right: 50px;
+  opacity: 0.035;
+  color: var(--text-primary);
+  letter-spacing: 4px;
+  line-height: 1;
+  pointer-events: none;
+  user-select: none;
+}
+
+/* ─── BADGE ─── */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.68rem;
+  font-weight: 700;
+  padding: 5px 14px;
+  border-radius: 20px;
+  letter-spacing: 1.2px;
+  width: fit-content;
+  margin-bottom: 20px;
+}
+
+.badgeLive {
+  composes: badge;
+  background: rgba(0, 230, 118, 0.1);
+  color: var(--accent-green);
+}
+
+.badgeSoon {
+  composes: badge;
+  background: rgba(245, 132, 31, 0.1);
+  color: var(--accent-orange);
+}
+
+.badgeDot {
+  width: 6px;
+  height: 6px;
+  background: var(--accent-green);
+  border-radius: 50%;
+  animation: pulse 2s infinite;
+}
+
+/* ─── SLIDE TITLE ─── */
+.slideTitle {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(2.8rem, 5vw, 4.2rem);
+  line-height: 1.05;
+  letter-spacing: 2px;
+  margin-bottom: 20px;
+}
+
+.titleAccent {
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+/* ─── SLIDE DESCRIPTION ─── */
+.slideDesc {
+  font-size: 1rem;
+  color: var(--text-secondary);
+  max-width: 460px;
+  line-height: 1.7;
+  font-weight: 300;
+  margin-bottom: 36px;
+}
+
+/* ─── CTA BUTTON ─── */
+.cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 15px 34px;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 0.95rem;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  letter-spacing: 0.5px;
+  transition: all 0.25s ease;
+  color: #fff;
+  font-family: 'Outfit', sans-serif;
+  width: fit-content;
+}
+
+.cta:hover {
+  transform: translateY(-2px);
+}
+
+.ctaArrow {
+  transition: transform 0.25s ease;
+}
+
+.cta:hover .ctaArrow {
+  transform: translateX(4px);
+}
+
+/* ─── TAB NAVIGATION ─── */
+.tabNav {
+  position: relative;
+  display: flex;
+  z-index: 10;
+  background: rgba(6, 10, 20, 0.8);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-top: 1px solid var(--border-subtle);
+  flex-shrink: 0;
+}
+
+.tab {
+  flex: 1;
+  background: transparent;
+  border: none;
+  padding: 20px 28px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.tab::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: var(--accent-blue);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.tabActive::before {
+  transform: scaleX(1);
+}
+
+.tab:not(:last-child) {
+  border-right: 1px solid var(--border-subtle);
+}
+
+.tabNumber {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.5rem;
+  color: var(--text-muted);
+  letter-spacing: 1px;
+  transition: color 0.3s ease;
+  line-height: 1;
+}
+
+.tabActive .tabNumber {
+  color: var(--accent-blue);
+}
+
+.tabName {
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.tabActive .tabName {
+  color: var(--text-secondary);
+}
+
+.tab:hover .tabNumber {
+  color: var(--text-secondary);
+}
+
+.tab:hover .tabName {
+  color: var(--text-secondary);
+}
+
+/* ─── VISUAL GLOW (right panel bg) ─── */
+.visualGlow {
+  position: absolute;
+  width: 320px;
+  height: 320px;
+  border-radius: 50%;
+  filter: blur(100px);
+  pointer-events: none;
+  opacity: 0.12;
+  transition: all 0.6s ease;
+}
+
+/* ─── SVG ILLUSTRATION WRAPPER ─── */
+.illustrationWrap {
+  position: relative;
+  width: 70%;
+  max-width: 340px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.illustrationSvg {
+  width: 100%;
+  height: auto;
+}
+
+/* Chart-specific: animated stroke */
+.chartStroke {
+  stroke-dasharray: 600;
+  stroke-dashoffset: 600;
+  animation: drawLine 2s ease 0.4s forwards;
+}
+
+.chartFill {
+  opacity: 0;
+  animation: fadeUp 1s ease 1.2s forwards;
+}
+
+/* Shield stroke draw */
+.shieldDraw {
+  stroke-dasharray: 800;
+  stroke-dashoffset: 800;
+  animation: drawLine 2s ease 0.3s forwards;
+}
+
+/* Neural net pulse */
+.nodeCircle {
+  animation: nodePulse 3s ease infinite;
+}
+
+.nodeCircle:nth-child(2n) {
+  animation-delay: 0.5s;
+}
+
+.nodeCircle:nth-child(3n) {
+  animation-delay: 1s;
+}
+
+/* Code cursor blink */
+.cursor {
+  animation: blink 1s step-end infinite;
+}
+
+.codeLine {
+  opacity: 0;
+  animation: fadeUp 0.5s ease forwards;
+}
+
+.codeLine:nth-child(1) { animation-delay: 0.3s; }
+.codeLine:nth-child(2) { animation-delay: 0.5s; }
+.codeLine:nth-child(3) { animation-delay: 0.7s; }
+.codeLine:nth-child(4) { animation-delay: 0.9s; }
+
+/* ─── TOAST ─── */
+.toast {
+  position: fixed;
+  bottom: 90px;
+  right: 40px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: 14px;
+  padding: 18px 24px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  font-size: 0.9rem;
+  color: var(--text-primary);
+  z-index: 100;
+  transform: translateY(20px);
+  opacity: 0;
+  animation: toastIn 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
+  overflow: hidden;
+  max-width: 360px;
+}
+
+.toastIcon {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  flex-shrink: 0;
+  background: rgba(245, 132, 31, 0.1);
+  color: var(--accent-orange);
+}
+
+.toastText {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.toastTitle {
+  font-weight: 600;
+  font-size: 0.85rem;
+}
+
+.toastSub {
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+}
+
+.toastProgress {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 2px;
+  background: var(--accent-orange);
+  border-radius: 0 0 14px 14px;
+  animation: toastProgress 4s linear forwards;
+}
+
+/* ─── FOOTER ─── */
+.footer {
+  display: none;
+}
+
+/* ─── KEYFRAMES ─── */
+@keyframes drawLine {
+  to { stroke-dashoffset: 0; }
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes toastIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes toastProgress {
+  from { width: 100%; }
+  to { width: 0%; }
+}
+
+@keyframes nodePulse {
+  0%, 100% { opacity: 0.6; r: 6; }
+  50% { opacity: 1; r: 8; }
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+/* ═══════════════════════════════
+   RESPONSIVE
+   ═══════════════════════════════ */
+
+@media (max-width: 968px) {
+  .header {
+    padding: 20px 24px;
+  }
+
+  .slideContainer {
+    flex-direction: column;
+  }
+
+  .leftPanel {
+    width: 100%;
+    height: 58%;
+  }
+
+  .rightPanel {
+    width: 100%;
+    height: 42%;
+    border-left: none;
+    border-top: 1px solid var(--border-subtle);
+  }
+
+  .slideContent {
+    padding: 100px 40px 40px;
+  }
+
+  .slideNumber {
+    font-size: 5rem;
+    top: 80px;
+    right: 24px;
+  }
+
+  .tabNav {
+    flex-shrink: 0;
+  }
+
+  .tab {
+    padding: 14px 16px;
+    gap: 10px;
+  }
+
+  .tabNumber {
+    font-size: 1.2rem;
+  }
+
+  .tabName {
+    font-size: 0.6rem;
+    letter-spacing: 1px;
+  }
+
+  .illustrationWrap {
+    width: 55%;
+  }
+
+  .toast {
+    right: 20px;
+    bottom: 80px;
+  }
+}
+
+@media (max-width: 640px) {
+  .header {
+    padding: 16px 20px;
+  }
+
+  .leftPanel {
+    height: 55%;
+  }
+
+  .rightPanel {
+    height: 45%;
+  }
+
+  .slideContent {
+    padding: 80px 24px 24px;
+  }
+
+  .slideTitle {
+    font-size: clamp(2rem, 8vw, 2.6rem);
+  }
+
+  .slideDesc {
+    font-size: 0.88rem;
+    margin-bottom: 28px;
+  }
+
+  .cta {
+    padding: 13px 28px;
+    font-size: 0.88rem;
+  }
+
+  .slideNumber {
+    font-size: 4rem;
+    top: 70px;
+    right: 16px;
+  }
+
+  .tab {
+    padding: 12px 10px;
+    flex-direction: column;
+    gap: 4px;
+    align-items: center;
+  }
+
+  .tabNumber {
+    font-size: 1rem;
+  }
+
+  .tabName {
+    font-size: 0.5rem;
+    text-align: center;
+  }
+
+  .illustrationWrap {
+    width: 60%;
+  }
+
+  .toast {
+    left: 16px;
+    right: 16px;
+    bottom: 16px;
+    max-width: none;
+  }
+
+  .visualGlow {
+    width: 200px;
+    height: 200px;
+  }
+}
