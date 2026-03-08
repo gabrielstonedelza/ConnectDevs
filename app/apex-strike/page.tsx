@@ -10,7 +10,7 @@ import FAQ from "./components/FAQ";
 import Footer from "./components/Footer";
 import styles from "./apex-strike.module.css";
 
-const WHOP_URL = "https://whop.com/apex-strike-pro/";
+const WHOP_URL = "https://whop.com/apex-strike-pro/apex-strike-pro-97/";
 
 export default function ApexStrikePage() {
   return (

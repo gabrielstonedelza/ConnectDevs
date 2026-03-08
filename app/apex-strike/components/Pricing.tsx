@@ -4,7 +4,7 @@ import { useRef } from "react";
 import { useScrollReveal } from "./useScrollReveal";
 import styles from "../apex-strike.module.css";
 
-const WHOP_URL = "https://whop.com/apex-strike-pro/";
+const WHOP_URL = "https://whop.com/apex-strike-pro/apex-strike-pro-97/";
 
 interface PriceTier {
   tier: string;

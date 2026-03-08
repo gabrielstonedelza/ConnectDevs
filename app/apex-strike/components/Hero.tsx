@@ -1,6 +1,6 @@
 import styles from "../apex-strike.module.css";
 
-const WHOP_URL = "https://whop.com/apex-strike-pro/";
+const WHOP_URL = "https://whop.com/apex-strike-pro/apex-strike-pro-97/";
 
 const STATS = [
   { value: "4-PHASE", label: "Signal Engine" },
@@ -15,10 +15,10 @@ export default function Hero() {
       <div className={`${styles.orb} ${styles.orbOrange}`} />
       <div className="container">
         <div className={styles.heroContent}>
-          <div className={styles.heroBadge}>
-            <span className={styles.pulse} />
-            TradingView Indicator — Pine Script v5
-          </div>
+          {/*<div className={styles.heroBadge}>*/}
+          {/*  <span className={styles.pulse} />*/}
+          {/*  TradingView Indicator — Pine Script v5*/}
+          {/*</div>*/}
 
           <h1 className={styles.heroTitle}>
             STOP GUESSING.
