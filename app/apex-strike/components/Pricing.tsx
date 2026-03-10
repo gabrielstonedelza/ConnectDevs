@@ -12,58 +12,47 @@ interface PriceTier {
   suffix: string;
   period: string;
   featured: boolean;
+  badge?: string;
   features: string[];
   btnLabel: string;
 }
 
 const TIERS: PriceTier[] = [
   {
-    tier: "Monthly",
-    amount: "$29",
-    suffix: "/mo",
-    period: "Billed monthly. Cancel anytime.",
+    tier: "Apex Strike Lite",
+    amount: "$49",
+    suffix: "",
+    period: "One-time payment. No subscriptions.",
     featured: false,
     features: [
-      "Full Apex Strike Pro indicator",
-      "All 4 timeframe presets",
-      "Live dashboard panel",
-      "6 alert conditions",
-      "Discord community access",
-      "Setup guides & documentation",
+      "4-phase engine (trend → bounce → entry)",
+      "LONG/SHORT signal arrows",
+      "SMA line & phase background colors",
+      "MACD confirmation + bounce dots",
+      "2 alerts (LONG/SHORT)",
+      "Basic 4-row info panel",
+      "Works on free TradingView",
     ],
-    btnLabel: "Start Monthly →",
+    btnLabel: "Get Lite →",
   },
   {
-    tier: "Quarterly",
-    amount: "$69",
-    suffix: "/3mo",
-    period: "Save 21% vs monthly. Billed every 3 months.",
+    tier: "Apex Strike Pro",
+    amount: "$99",
+    suffix: "",
+    period: "One-time payment. Lifetime updates included.",
     featured: true,
+    badge: "BEST VALUE",
     features: [
-      "Everything in Monthly",
-      "Priority support",
-      "Early access to new features",
-      "Weekly market analysis posts",
-      "Strategy video walkthroughs",
-      "Best value per month",
-    ],
-    btnLabel: "Get Quarterly ⚡",
-  },
-  {
-    tier: "Lifetime",
-    amount: "$249",
-    suffix: " once",
-    period: "One payment. Yours forever. All future updates.",
-    featured: false,
-    features: [
-      "Everything in Quarterly",
-      "Lifetime access — no renewals",
+      "Everything in Lite",
+      "Auto TP/SL levels on chart",
+      "Volume surge & session filters",
+      "4 timeframe presets + bounce tracking",
+      "Full 12-row dashboard with R:R & ATR",
+      "6 alerts (setup, bounce, MACD, volume)",
       "All future indicator updates",
-      "Private lifetime members chat",
-      "Direct support channel",
-      "Input on future features",
+      "Private community access",
     ],
-    btnLabel: "Go Lifetime →",
+    btnLabel: "Get Pro ⚡",
   },
 ];
 
@@ -80,25 +69,26 @@ export default function Pricing() {
           <div className={styles.sectionLabel} style={{ textAlign: "center" }}>
             {"// Pricing"}
           </div>
-          <div className={styles.sectionTitle}>CHOOSE YOUR PLAN</div>
+          <div className={styles.sectionTitle}>ONE PRICE. YOURS FOREVER.</div>
           <div className={styles.sectionDesc} style={{ margin: "0 auto" }}>
-            One indicator. Multiple timeframe presets. Full dashboard. All alerts.
+            No subscriptions. No recurring fees. Pay once and it&apos;s yours forever.
+            Choose Lite for the core engine or Pro for the full trading suite.
           </div>
         </div>
 
-        <div ref={gridRef} className={`${styles.pricingGrid} animate-in`}>
+        <div ref={gridRef} className={`${styles.pricingGridTwo} animate-in`}>
           {TIERS.map((tier) => (
             <div
               key={tier.tier}
               className={tier.featured ? styles.priceCardFeatured : styles.priceCard}
             >
-              {tier.featured && (
-                <div className={styles.priceCardBadge}>MOST POPULAR</div>
+              {tier.badge && (
+                <div className={styles.priceCardBadge}>{tier.badge}</div>
               )}
               <div className={styles.priceTier}>{tier.tier}</div>
               <div className={styles.priceAmount}>
                 {tier.amount}
-                <span>{tier.suffix}</span>
+                {tier.suffix && <span>{tier.suffix}</span>}
               </div>
               <div className={styles.pricePeriod}>{tier.period}</div>
               <ul className={styles.priceFeatures}>

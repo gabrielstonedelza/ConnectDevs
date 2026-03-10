@@ -10,8 +10,8 @@ const FAQS = [
     a: "Apex Strike Pro works on any TradingView plan, including free accounts. You don't need a paid TradingView subscription to use invite-only indicators.",
   },
   {
-    q: "How quickly do I get access after subscribing?",
-    a: "After completing your purchase on Whop, submit your TradingView username. Access is typically granted within a few hours during business days, often much faster.",
+    q: "How do I get the script after purchasing?",
+    a: "After completing your one-time purchase on Whop, head to your Whop dashboard where the Pine Script file (.txt) is available for immediate download. Paste it into TradingView's Pine Editor and you're live.",
   },
   {
     q: "Does it repaint?",
@@ -30,8 +30,8 @@ const FAQS = [
     a: "No indicator can guarantee profits. Apex Strike Pro is a precision tool that gives you high-probability setups with built-in risk management, but trading always involves risk. Use proper position sizing and never risk more than you can afford to lose.",
   },
   {
-    q: "Can I cancel my subscription?",
-    a: "Yes. Monthly and quarterly plans can be cancelled at any time through Whop. Your access remains active until the end of your billing period. Lifetime access never expires.",
+    q: "Is this a one-time payment?",
+    a: "Yes. Both Apex Strike Lite and Pro are one-time purchases — no subscriptions, no recurring fees. You pay once and the script is yours forever. Pro also includes all future updates.",
   },
 ];
 
