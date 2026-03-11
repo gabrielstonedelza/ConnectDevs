@@ -4,7 +4,11 @@ import { useRef } from "react";
 import { useScrollReveal } from "./useScrollReveal";
 import styles from "../apex-strike.module.css";
 
-const WHOP_URL = "https://whop.com/apex-strike-pro/apex-strike-pro-97/";
+const WHOP_URL_LITE = "https://whop.com/apex-strike-pro/apex-strike-pro-97/";
+const WHOP_URL_PRO = "https://whop.com/apex-strike-pro/apex-strike-pro-f4";
+
+//https://whop.com/apex-strike-pro/apex-strike-pro-97/
+//https://whop.com/apex-strike-pro/apex-strike-pro-f4/
 
 interface PriceTier {
   tier: string;
@@ -100,7 +104,7 @@ export default function Pricing() {
                 ))}
               </ul>
               <a
-                href={WHOP_URL}
+                href={ tier.featured ? WHOP_URL_PRO : WHOP_URL_LITE}
                 className={tier.featured ? styles.priceBtnPrimary : styles.priceBtnSecondary}
                 target="_blank"
                 rel="noopener noreferrer"
