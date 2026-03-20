@@ -1,3 +1,8 @@
 {
+  "/_not-found/page": "app/_not-found/page.js",
+  "/page": "app/page.js",
+  "/convora/terms/page": "app/convora/terms/page.js",
+  "/convora/privacy/page": "app/convora/privacy/page.js",
+  "/convora/page": "app/convora/page.js",
   "/apex-strike/page": "app/apex-strike/page.js"
 }

@@ -18,7 +18,7 @@ interface Slide {
   ctaHref: string | null;
   accentColor: string;
   glowColor: string;
-  icon: "chart" | "shield" | "brain" | "code";
+  icon: "chart" | "shield" | "brain" | "code" | "apps";
 }
 
 const SLIDES: Slide[] = [
@@ -81,6 +81,21 @@ const SLIDES: Slide[] = [
     accentColor: "linear-gradient(135deg, #F5841F, #FF6B2C)",
     glowColor: "rgba(245,132,31,0.25)",
     icon: "code",
+  },
+  {
+    id: 5,
+    tab: "05",
+    tabName: "Apps",
+    badge: "LIVE",
+    title: "MOBILE",
+    titleAccent: "APPS",
+    description:
+      "Beautifully crafted mobile applications designed to level up your daily life. Starting with Convora — a 28-day communication mastery program.",
+    ctaText: "Explore Now",
+    ctaHref: "/convora",
+    accentColor: "linear-gradient(135deg, #E8A838, #F5C842)",
+    glowColor: "rgba(232,168,56,0.25)",
+    icon: "apps",
   },
 ];
 
@@ -291,12 +306,56 @@ function CodeIllustration() {
   );
 }
 
+function AppsIllustration() {
+  return (
+    <svg viewBox="0 0 240 240" className={styles.illustrationSvg}>
+      <defs>
+        <linearGradient id="appsGrad" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0%" stopColor="#E8A838" />
+          <stop offset="100%" stopColor="#F5C842" />
+        </linearGradient>
+      </defs>
+      {/* Phone outline */}
+      <rect
+        x="60" y="20" width="120" height="200" rx="16"
+        fill="none" stroke="url(#appsGrad)" strokeWidth="2.5"
+      />
+      {/* Screen */}
+      <rect x="68" y="44" width="104" height="152" rx="4" fill="rgba(232,168,56,0.04)" />
+      {/* Notch */}
+      <rect x="95" y="28" width="50" height="6" rx="3" fill="rgba(232,168,56,0.3)" />
+      {/* App grid */}
+      {[
+        { x: 82, y: 62 }, { x: 112, y: 62 }, { x: 142, y: 62 },
+        { x: 82, y: 96 }, { x: 112, y: 96 }, { x: 142, y: 96 },
+        { x: 82, y: 130 }, { x: 112, y: 130 }, { x: 142, y: 130 },
+      ].map((pos, i) => (
+        <rect
+          key={i}
+          x={pos.x} y={pos.y} width="22" height="22" rx="5"
+          fill={i === 4 ? "rgba(232,168,56,0.25)" : "rgba(232,168,56,0.08)"}
+          stroke={i === 4 ? "url(#appsGrad)" : "rgba(232,168,56,0.15)"}
+          strokeWidth="1"
+        />
+      ))}
+      {/* Bottom bar */}
+      <rect x="100" y="206" width="40" height="4" rx="2" fill="rgba(232,168,56,0.3)" />
+      {/* Pulse on center app */}
+      <circle cx="123" cy="107" r="14" fill="none" stroke="rgba(232,168,56,0.12)" strokeWidth="1">
+        <animate attributeName="r" values="14;24;14" dur="3s" repeatCount="indefinite" />
+        <animate attributeName="opacity" values="0.3;0;0.3" dur="3s" repeatCount="indefinite" />
+      </circle>
+    </svg>
+  );
+}
+
 function SlideIllustration({ type }: { type: Slide["icon"] }) {
   switch (type) {
     case "chart":  return <ChartIllustration />;
     case "shield": return <ShieldIllustration />;
     case "brain":  return <BrainIllustration />;
     case "code":   return <CodeIllustration />;
+    case "apps":   return <AppsIllustration />;
   }
 }
 

@@ -3,7 +3,7 @@
 
 type AppRoutes = "/" | "/apex-strike"
 type PageRoutes = never
-type LayoutRoutes = "/" | "/apex-strike"
+type LayoutRoutes = "/" | "/apex-strike" | "/convora"
 type RedirectRoutes = never
 type RewriteRoutes = never
 type Routes = AppRoutes | PageRoutes | LayoutRoutes | RedirectRoutes | RewriteRoutes
@@ -12,6 +12,7 @@ type Routes = AppRoutes | PageRoutes | LayoutRoutes | RedirectRoutes | RewriteRo
 interface ParamMap {
   "/": {}
   "/apex-strike": {}
+  "/convora": {}
 }
 
 
@@ -20,6 +21,7 @@ export type ParamsOf<Route extends Routes> = ParamMap[Route]
 interface LayoutSlotMap {
   "/": never
   "/apex-strike": never
+  "/convora": never
 }
 
 
