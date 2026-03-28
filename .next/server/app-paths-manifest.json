@@ -1,7 +1,3 @@
 {
-  "/apple-icon.png/route": "app/apple-icon.png/route.js",
-  "/icon.png/route": "app/icon.png/route.js",
-  "/page": "app/page.js",
-  "/convora/page": "app/convora/page.js",
-  "/apex-strike/page": "app/apex-strike/page.js"
+  "/convora/page": "app/convora/page.js"
 }

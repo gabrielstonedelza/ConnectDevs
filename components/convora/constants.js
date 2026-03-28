@@ -53,8 +53,8 @@ export const TESTIMONIALS = [
 
 export const PRICING = [
   { name: "Free", price: "$0", period: "forever", features: ["Week 1 — 7 full lessons", "5-language audio", "Exercises & challenges", "Progress tracking"], highlight: false, cta: "Download Free" },
+  { name: "Monthly", price: "$6.99", period: "/month", features: ["All 28 days unlocked", "18+ frameworks", "Full audio library", "Cancel anytime"], highlight: false, cta: "Get Monthly" },
   { name: "Annual", price: "$39.99", period: "/year", badge: "SAVE 52%", features: ["All 28 days unlocked", "18+ frameworks", "Full audio library", "Priority updates"], highlight: true, cta: "Get Convora" },
-  { name: "Lifetime", price: "$79.99", period: "once", badge: "FOREVER", features: ["Everything in Annual", "Pay once, own forever", "All future content", "Support indie dev"], highlight: false, cta: "Get Lifetime" },
 ];
 
 export const FAQS = [
@@ -62,7 +62,7 @@ export const FAQS = [
   { q: "How does multi-language audio work?", a: "Tap the language flag on any lesson's audio player. Pick from English, Spanish, French, Portuguese, or German. Preview each voice before choosing. Your selection saves automatically. All processing happens on your device — nothing is sent to any server." },
   { q: "Do I need to create an account?", a: "No. Convora has zero sign-up, zero accounts, zero data collection. Your progress is stored locally on your device. Payments are handled entirely by Apple or Google." },
   { q: "How is this different from other apps?", a: "Most communication apps give generic tips or AI chatbot practice. Convora gives you 18+ named, actionable frameworks built from 20+ years of expertise, structured daily practice, audio in 5 languages, and progress sharing — all without collecting a single byte of your data." },
-  { q: "Can I cancel anytime?", a: "Absolutely. Cancel through your App Store or Google Play settings. No questions asked. The Lifetime option means you never think about it again." },
+  { q: "Can I cancel anytime?", a: "Absolutely. Cancel through your App Store or Google Play settings. No questions asked. Switch between Monthly and Annual plans whenever you want." },
   { q: "Does it work offline?", a: "Yes. All lessons, audio, and exercises work completely offline. The only time internet is needed is for the initial download and in-app purchase verification." },
 ];
 
