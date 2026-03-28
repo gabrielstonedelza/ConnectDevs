@@ -66,8 +66,7 @@ export const FAQS = [
   { q: "Does it work offline?", a: "Yes. All lessons, audio, and exercises work completely offline. The only time internet is needed is for the initial download and in-app purchase verification." },
 ];
 
-// Update these with real URLs after store approval
 export const STORE_LINKS = {
-  appStore: "#",
+  appStore: "https://apps.apple.com/us/app/convora/id6761091727",
   playStore: "#",
 };
