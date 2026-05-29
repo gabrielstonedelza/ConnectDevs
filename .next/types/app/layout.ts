@@ -1,4 +1,4 @@
-// File: /Users/712189512asare/Downloads/apex-strike-nextjs/app/layout.tsx
+// File: /Users/712189512asare/Documents/development/claude projects/ConnectDevs/app/layout.tsx
 import * as entry from '../../../app/layout.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 

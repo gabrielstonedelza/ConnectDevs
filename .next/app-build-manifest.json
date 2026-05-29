@@ -6,17 +6,28 @@
       "static/css/app/layout.css",
       "static/chunks/app/layout.js"
     ],
-    "/convora/layout": [
+    "/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/css/app/convora/layout.css",
-      "static/chunks/app/convora/layout.js"
+      "static/css/app/page.css",
+      "static/chunks/app/page.js"
     ],
-    "/convora/page": [
+    "/profile/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/css/app/convora/page.css",
-      "static/chunks/app/convora/page.js"
+      "static/css/app/profile/page.css",
+      "static/chunks/app/profile/page.js"
+    ],
+    "/apex-strike/layout": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/apex-strike/layout.js"
+    ],
+    "/apex-strike/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/css/app/apex-strike/page.css",
+      "static/chunks/app/apex-strike/page.js"
     ]
   }
 }
