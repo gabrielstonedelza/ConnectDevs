@@ -69,7 +69,17 @@ export default function Profile() {
               shipping products across encrypted communications, security
               tooling, and mobile apps. I build with Django, Next.js, and
               Flutter, with a deep focus on applied cryptography and
-              zero-trust architecture. Security is a foundation, not a feature.
+              zero-trust architecture. Creator of{" "}
+              <a
+                href="https://www.ironseal.app"
+                target="_blank"
+                rel="noopener noreferrer"
+                className={styles.bioLink}
+              >
+                IronSeal
+              </a>
+              , a zero-knowledge encrypted messaging platform.
+              Security is a foundation, not a feature.
             </p>
 
             <div className={styles.heroLinks}>
@@ -85,7 +95,7 @@ export default function Profile() {
                 </svg>
               </a>
               <a
-                href="https://linkedin.com"
+                href="https://www.linkedin.com/in/gabriel-akwasi-asare-55b41635a"
                 target="_blank"
                 rel="noopener noreferrer"
                 className={styles.heroLink}
@@ -216,9 +226,17 @@ export default function Profile() {
                   <span key={t} className={styles.projectTechTag}>{t}</span>
                 ))}
               </div>
-              <span className={styles.projectLink} style={{ color: "var(--accent-green)" }}>
-                Shipped
-              </span>
+              <a
+                href="https://www.ironseal.app"
+                target="_blank"
+                rel="noopener noreferrer"
+                className={styles.projectLink}
+              >
+                Visit IronSeal
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M5 12h14M12 5l7 7-7 7" />
+                </svg>
+              </a>
             </div>
 
             {/* Convora */}

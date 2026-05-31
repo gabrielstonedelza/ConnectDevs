@@ -17,17 +17,6 @@
       "static/chunks/main-app.js",
       "static/css/app/profile/page.css",
       "static/chunks/app/profile/page.js"
-    ],
-    "/apex-strike/layout": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/apex-strike/layout.js"
-    ],
-    "/apex-strike/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/css/app/apex-strike/page.css",
-      "static/chunks/app/apex-strike/page.js"
     ]
   }
 }
