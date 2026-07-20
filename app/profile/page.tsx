@@ -140,7 +140,7 @@ export default function Profile() {
               </div>
               <h3 className={styles.skillCategoryTitle}>Frameworks & Languages</h3>
               <div className={styles.skillTags}>
-                {["Next.js", "Django", "Flutter", "React", "TypeScript", "Python", "Dart"].map((s) => (
+                {["Next.js", "Django", "Flutter", "Swift", "React", "TypeScript", "Python", "Dart"].map((s) => (
                   <span key={s} className={styles.skillTag}>{s}</span>
                 ))}
               </div>
@@ -233,6 +233,44 @@ export default function Profile() {
                 className={styles.projectLink}
               >
                 Visit IronSeal
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M5 12h14M12 5l7 7-7 7" />
+                </svg>
+              </a>
+            </div>
+
+            {/* MarkTide */}
+            <div className={styles.projectCard}>
+              <div className={styles.projectHeader}>
+                <div className={styles.projectIconCyan}>
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z" />
+                    <polyline points="14 2 14 8 20 8" />
+                    <line x1="16" y1="13" x2="8" y2="13" />
+                    <line x1="16" y1="17" x2="8" y2="17" />
+                    <polyline points="10 9 9 9 8 9" />
+                  </svg>
+                </div>
+                <span className={styles.projectBadgeLive}>Live</span>
+              </div>
+              <h3 className={styles.projectTitle}>MarkTide</h3>
+              <p className={styles.projectDesc}>
+                A native markdown editor for macOS. Fast, beautiful, and
+                private — with live preview, glowing highlights, wiki links,
+                and on-device AI that never leaves your Mac.
+              </p>
+              <div className={styles.projectTech}>
+                {["macOS", "Swift", "Markdown", "On-Device AI"].map((t) => (
+                  <span key={t} className={styles.projectTechTag}>{t}</span>
+                ))}
+              </div>
+              <a
+                href="https://marktide.app"
+                target="_blank"
+                rel="noopener noreferrer"
+                className={styles.projectLink}
+              >
+                Visit MarkTide
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                   <path d="M5 12h14M12 5l7 7-7 7" />
                 </svg>

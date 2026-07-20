@@ -70,14 +70,14 @@ const SLIDES: Slide[] = [
   {
     id: 4,
     tab: "04",
-    tabName: "Dev Tools",
-    badge: "COMING SOON",
-    title: "DEVELOPER",
-    titleAccent: "TOOLS",
+    tabName: "MarkTide",
+    badge: "LIVE",
+    title: "MARK",
+    titleAccent: "TIDE",
     description:
-      "A complete toolkit for modern developers. CLI utilities, project scaffolding, performance profiling, and deployment pipelines built for speed.",
-    ctaText: "Get Notified",
-    ctaHref: null,
+      "A native markdown editor for macOS. Fast, beautiful, and private — with live preview, glowing highlights, wiki links, and on-device AI that never leaves your Mac.",
+    ctaText: "Explore Now",
+    ctaHref: "https://marktide.app",
     accentColor: "linear-gradient(135deg, #F5841F, #FF6B2C)",
     glowColor: "rgba(245,132,31,0.25)",
     icon: "code",
@@ -400,7 +400,11 @@ export default function Home() {
     (slide: Slide) => {
       resetAutoPlay();
       if (slide.ctaHref) {
-        router.push(slide.ctaHref);
+        if (slide.ctaHref.startsWith("http")) {
+          window.open(slide.ctaHref, "_blank", "noopener,noreferrer");
+        } else {
+          router.push(slide.ctaHref);
+        }
       } else {
         if (toastTimer.current) clearTimeout(toastTimer.current);
         setToast(slide.tabName);

@@ -1,5 +1,4 @@
 {
-  "/apple-icon.png/route": "app/apple-icon.png/route.js",
   "/icon.png/route": "app/icon.png/route.js",
   "/page": "app/page.js",
   "/profile/page": "app/profile/page.js"
